@@ -1,0 +1,18 @@
+version 1.1.1 (windows-x64)
+app sha256       1d97fd1eb94414dcf34c747d6f36371b2b47fd2f8cc722532882ef326797a779
+bootstrap sha256 fff3107fb498969318dcbdd19ebbd8feeddd4f0d51f98d961b754406ff611b77
+install.sh sha256 203740c670734867a79ffecffdd1cab09dc19f1a9cf7bdac5efd2675b00c9a16
+install.ps1 sha256 703d322067b6f5e34c5e7cd97d31fb51b5e5ecd889270cd5c4e7dfb38032f72d
+
+macOS（先核對安裝器本身的檢查碼，才執行它）:
+  curl -fsSL "https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.1/install.sh" -o /tmp/mimesis-install.sh &&
+  echo "203740c670734867a79ffecffdd1cab09dc19f1a9cf7bdac5efd2675b00c9a16  /tmp/mimesis-install.sh" | shasum -a 256 -c - &&
+  MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.1" MIMESIS_EXPECTED_SHA="fff3107fb498969318dcbdd19ebbd8feeddd4f0d51f98d961b754406ff611b77" sh /tmp/mimesis-install.sh
+
+Windows PowerShell（先核對 install.ps1 才執行）:
+  $env:MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.1"; $env:MIMESIS_EXPECTED_SHA="fff3107fb498969318dcbdd19ebbd8feeddd4f0d51f98d961b754406ff611b77";
+  irm "https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.1/install.ps1" -OutFile "$env:TEMP\mimesis-install.ps1";
+  if ((Get-FileHash "$env:TEMP\mimesis-install.ps1" -Algorithm SHA256).Hash -ne "703d322067b6f5e34c5e7cd97d31fb51b5e5ecd889270cd5c4e7dfb38032f72d") { throw "安裝器檢查碼不符" };
+  & "$env:TEMP\mimesis-install.ps1"
+
+上載到 https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.1/：app.tar.gz、manifest.json、bootstrap.tar.gz、install.sh、install.ps1
