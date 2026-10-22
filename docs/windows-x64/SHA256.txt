@@ -2,7 +2,7 @@ version 1.1.2 (windows-x64)
 app sha256       ef4ab51a03c36fbb8f2253f1ce57df67a41b8c6b8ce5dcb8b22367a6683b7fa3
 bootstrap sha256 f97affa76f87c092834326baaebcee4f9eb5254287a03a61da59a82c2378d6e7
 install.sh sha256 203740c670734867a79ffecffdd1cab09dc19f1a9cf7bdac5efd2675b00c9a16
-install.ps1 sha256 c33725c8f671fa00d3b0d8cc428e5a6e7ba7919e6e0c9775a366e1ef61b8d484
+install.ps1 sha256 83ef8940ea6249aec4e93fcb632f50d185d355ee385396b8bcfa57f6879d6777
 
 macOS（先核對安裝器本身的檢查碼，才執行它）:
   curl -fsSL "https://github.com/10kwong/mimesis-releases/releases/download/windows-x64-v1.1.2/install.sh" -o /tmp/mimesis-install.sh &&
