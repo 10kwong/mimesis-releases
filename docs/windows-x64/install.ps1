@@ -1,11 +1,14 @@
 # 映題 Mimesis · first install (Windows PowerShell)
 #
 #   $env:MIMESIS_BASE="https://…"; $env:MIMESIS_EXPECTED_SHA="<bootstrap sha256>"
-#   irm "$env:MIMESIS_BASE/install.ps1" | iex
+#   irm "$env:MIMESIS_BASE/install.ps1" -OutFile "$env:TEMP\mimesis-install.ps1"
+#   (check the installer's SHA-256 against the published value)
+#   powershell -NoProfile -ExecutionPolicy Bypass -File "$env:TEMP\mimesis-install.ps1"
 #
-# The hash pins the bootstrap (Node + installer); the installer then verifies the ed25519 signature
-# of the app archive before extracting it. Company policy may block scripts or unsigned programs;
-# see docs/local-desktop.md for what to do when that happens.
+# Use -ExecutionPolicy Bypass: a fresh Windows 10/11 client defaults to Restricted, so calling the
+# downloaded file with "&" fails. The hash pins the bootstrap (Node + installer); the installer then
+# verifies the ed25519 signature of the app archive before extracting it. Company policy may block
+# scripts or unsigned programs; see docs/local-desktop.md for what to do when that happens.
 
 $ErrorActionPreference = "Stop"
 
