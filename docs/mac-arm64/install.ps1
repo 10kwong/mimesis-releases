@@ -1,4 +1,4 @@
-# 映題 Mimesis · first install (Windows PowerShell)
+﻿# 映題 Mimesis · first install (Windows PowerShell)
 #
 #   $env:MIMESIS_BASE="https://…"; $env:MIMESIS_EXPECTED_SHA="<bootstrap sha256>"
 #   irm "$env:MIMESIS_BASE/install.ps1" -OutFile "$env:TEMP\mimesis-install.ps1"
