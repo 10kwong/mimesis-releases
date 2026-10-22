@@ -1,18 +1,18 @@
-version 1.1.2 (mac-arm64)
-app sha256       2a76468a9aab2f992f817635bf17eb416b6ab072e4fa33f4846360266ad4c9e0
-bootstrap sha256 838c7d5e91098154f54d78b8f55497abc711099f6cca2eb24d29f34df6f5b362
+version 1.1.3 (mac-arm64)
+app sha256       b3d6d21e9200b1dd9d9f31688ba1bdb4d23bedf8142d0e9a49467f6651886d7b
+bootstrap sha256 61a848a9ff46fe18f818ad337010126d10f64eaf9b796ec530dbd4ae09461300
 install.sh sha256 203740c670734867a79ffecffdd1cab09dc19f1a9cf7bdac5efd2675b00c9a16
-install.ps1 sha256 c33725c8f671fa00d3b0d8cc428e5a6e7ba7919e6e0c9775a366e1ef61b8d484
+install.ps1 sha256 83ef8940ea6249aec4e93fcb632f50d185d355ee385396b8bcfa57f6879d6777
 
 macOS（先核對安裝器本身的檢查碼，才執行它）:
-  curl -fsSL "https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.2/install.sh" -o /tmp/mimesis-install.sh &&
+  curl -fsSL "https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.3/install.sh" -o /tmp/mimesis-install.sh &&
   echo "203740c670734867a79ffecffdd1cab09dc19f1a9cf7bdac5efd2675b00c9a16  /tmp/mimesis-install.sh" | shasum -a 256 -c - &&
-  MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.2" MIMESIS_EXPECTED_SHA="838c7d5e91098154f54d78b8f55497abc711099f6cca2eb24d29f34df6f5b362" sh /tmp/mimesis-install.sh
+  MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.3" MIMESIS_EXPECTED_SHA="61a848a9ff46fe18f818ad337010126d10f64eaf9b796ec530dbd4ae09461300" sh /tmp/mimesis-install.sh
 
 Windows PowerShell（先核對 install.ps1 才執行）:
-  $env:MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.2"; $env:MIMESIS_EXPECTED_SHA="838c7d5e91098154f54d78b8f55497abc711099f6cca2eb24d29f34df6f5b362";
-  irm "https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.2/install.ps1" -OutFile "$env:TEMP\mimesis-install.ps1";
-  if ((Get-FileHash "$env:TEMP\mimesis-install.ps1" -Algorithm SHA256).Hash -ne "c33725c8f671fa00d3b0d8cc428e5a6e7ba7919e6e0c9775a366e1ef61b8d484") { throw "安裝器檢查碼不符" };
+  $env:MIMESIS_BASE="https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.3"; $env:MIMESIS_EXPECTED_SHA="61a848a9ff46fe18f818ad337010126d10f64eaf9b796ec530dbd4ae09461300";
+  irm "https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.3/install.ps1" -OutFile "$env:TEMP\mimesis-install.ps1";
+  if ((Get-FileHash "$env:TEMP\mimesis-install.ps1" -Algorithm SHA256).Hash -ne "83ef8940ea6249aec4e93fcb632f50d185d355ee385396b8bcfa57f6879d6777") { throw "安裝器檢查碼不符" };
   powershell -NoProfile -ExecutionPolicy Bypass -File "$env:TEMP\mimesis-install.ps1"
 
-上載到 https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.2/：app.tar.gz、manifest.json、bootstrap.tar.gz、install.sh、install.ps1
+上載到 https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.3/：app.tar.gz、manifest.json、bootstrap.tar.gz、install.sh、install.ps1
