@@ -1,0 +1,10 @@
+{
+  "format": "mimesis-release",
+  "version": "1.1.1",
+  "platform": "mac-arm64",
+  "url": "https://github.com/10kwong/mimesis-releases/releases/download/mac-arm64-v1.1.1/app.tar.gz",
+  "sha256": "707aa873a1f068e56b7ed62a94bc06943368023332985f5c9d33abe1cc6f9495",
+  "notes": "# 映題 1.1.1（macOS Apple 晶片）\n\n第一個內部發佈的本地版。資料留在自己的電腦，不用登入，不用 Supabase。\n\n## 主要功能\n\n- 相片 → 原卷設定 → 新練習 → 核對答案 → 列印／匯出，流程與網站版相同。\n- SQLite 本機資料庫及圖片資料夾；桌面捷徑開啟，關掉再開資料仍在。\n- APIMart key 存 macOS Keychain；不上載、不寫入資料庫、備份或日誌。\n- 每日備份到老師選的資料夾，保留 14 份；還原前先驗證，舊資料保留。\n- 簽章更新：下載後先驗簽章及 SHA-256，失敗會退回上一版。\n- AI 代理與 API：可建立具名金鑰，使用 `/api/v1` 及 MCP server。\n\n## 修正\n\n- 移除 APIMart key 後，已儲存的原卷及練習仍可開啟、列印及匯出；AI 功能會提示到設定頁重新貼上 key。\n- macOS Keychain 移除失敗會如實顯示，不會再假裝成功。\n- Windows DPAPI 儲存 key 改由 stdin 讀取，修正之前可能寫入空值的問題（仍待 Windows 實機驗收）。\n- 背景出題或畫圖失敗時，保留已付款的題稿及結果；返回該份原卷可重試，不會借用另一份原卷的設定。\n- 重讀相片保留原本的原卷；同一張相片重試時重用已付款的讀取結果，避免重複收費。\n- 重讀完成或失敗只影響原本的原卷，不會搶走正在看的另一份。\n- 橫向電話的儲存／衝突提示會換行，不再壓住科目及年級。\n- v1 畫圖 API 的 `style` 參數會正確套用；有明確 `prompt` 時仍以該指示為準。\n\n## 安裝及更新\n\n- 這個打包是 macOS Apple 晶片版，不支援 Intel Mac；Windows 版要另行在 Windows 打包及驗收。\n- 舊版 1.0.x 請用完整安裝（重新下載 bootstrap）；啟動器及 Node runtime 不會隨 app 更新。\n- 已內建免費更新通道；開啟程式及每 6 小時自動檢查，有新版本會在畫面頂部提示。設定頁可覆寫更新網址。\n- 首次開啟要貼上自己的 APIMart key，並填姓名及分社。\n- 圖像模型可能畫錯中文字、數字或數量；派發前必須逐題核對。\n",
+  "releasedAt": "2026-10-22T18:39:51.763Z",
+  "signature": "hNWgDoyWd+YhVZsmzIhlr2ss5TxHn+4kqMAad0CyC5D9ndDAfNfACBpgzu7hxxcEFV4zY0qtX8siMqHE5CZ2Cg=="
+}
